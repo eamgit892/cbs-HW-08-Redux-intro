@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Counter } from './features/Counter'
 import { Counter2 } from './features/Counter2'
+import { Notes } from './features/Notes'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <tr>
                 <th>Task 1</th>
                 <th>Task 2 <br />+4 actions</th>
+                <th>Task 3 <br />Notes in array</th>
             </tr>
           </thead>
           <tbody>
@@ -25,6 +27,9 @@ function App() {
                 </td>
                 <td>
                   <Counter2 /> 
+                </td>
+                <td>
+                  <Notes /> 
                 </td>
             </tr>
           </tbody>

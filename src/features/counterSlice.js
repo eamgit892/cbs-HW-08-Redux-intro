@@ -3,7 +3,9 @@ import { act } from "react";
 
 const initialState = {
     value: 0,
-    adder: 0,
+    
+    // for Task 3 
+    notes: [],
 }
 
 export const counterSlice = createSlice({
@@ -31,6 +33,15 @@ export const counterSlice = createSlice({
         divideByValue: (state, action) => {
             state.value /= Number(action.payload)
         },
+        
+        // for Task 3 
+        addNote: (state, action) => {
+            console.log('addnote triggered', action)
+            state.notes = [...(state.notes), action.payload]
+            console.log(state.notes);
+        },
+        
+
 
 
     }
@@ -38,8 +49,9 @@ export const counterSlice = createSlice({
 
 export const { increment, decrement, 
     reload, incByValue, decByValue,
-    mulByValue, divideByValue } = counterSlice.actions
+    mulByValue, divideByValue, addNote } = counterSlice.actions
+
 export const selectCount = (state) => state.counter.value
-export const getAdder    = (state) => state.counter.adder
+export const getNotes    = (state) => state.counter.notes
 
 export default counterSlice.reducer

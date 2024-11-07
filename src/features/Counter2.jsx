@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { reload, incByValue, decByValue,
-          mulByValue, divideByValue } from "./counterSlice";
+          mulByValue, divideByValue, selectCount} from "./counterSlice";
 
 export  function Counter2() {
-    const count = useSelector((state) => state.counter.value)
+    const count = useSelector(selectCount)
     const dispatch = useDispatch() 
 
     const [inpValue, setInputValue] = useState('')
