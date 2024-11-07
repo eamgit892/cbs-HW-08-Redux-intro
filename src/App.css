@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+table, th, td {
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+
+}
+table span {
+  margin: 0 1rem;
+}
+table td {
+  padding: 0.5rem;
+}

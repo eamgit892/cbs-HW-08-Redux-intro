@@ -1,24 +1,23 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "./counterSlice";
+import { decrement, increment, selectCount } from "./counterSlice";
 
 export function Counter() {
-    const count = useSelector((state) => state.counter.value)
+    const count = useSelector(selectCount)
     const dispatch = useDispatch() 
 
     return (
         <div>
             <div>
+                <span>{count}</span><br />
+
                 <button 
-                    aria-lable="inc. value"
-                    onClick={() => dispatch(increment())}
-                > Increment 
+                    aria-label="inc. value"
+                    onClick={() => dispatch(increment())}> Increment 
                 </button>
-                <span>{count}</span>
                 <button 
-                    aria-lable="dec. value"
-                    onClick={() => dispatch(decrement())}
-                > Decrement
+                    aria-label="dec. value"
+                    onClick={() => dispatch(decrement())}> Decrement
                 </button>
             </div>
         </div>
